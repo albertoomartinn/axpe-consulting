@@ -1,10 +1,13 @@
 import usePlacesAutocomplete, { getGeocode, getLatLng } from 'use-places-autocomplete';
 import { Combobox, ComboboxInput, ComboboxPopover, ComboboxList, ComboboxOption } from '@reach/combobox'
 import '@reach/combobox/styles.css'
+import { useDispatch } from 'react-redux';
+import { addMarkerList, saveCurrentSearch } from '../actions/markers';
 
 const Search = () => {
+    const dispatch = useDispatch()
+    const { ready, value, suggestions: { status, data }, setValue } = usePlacesAutocomplete();
     
-    const {ready, value, suggestions: { status, data }, setValue } = usePlacesAutocomplete();
     return (
         <div>
             <Combobox
@@ -13,9 +16,10 @@ const Search = () => {
                         const results = await getGeocode({ address })
                         //coords
                         const { lat, lng }  = await getLatLng(results[0])
-                        console.log(lat, lng)
+                        dispatch(saveCurrentSearch({lat, lng}))
+                        dispatch(addMarkerList({lat, lng}))
                     } catch (error) {
-                        console.log('error')
+                        console.log(error)
                     } 
                 }}
             >
