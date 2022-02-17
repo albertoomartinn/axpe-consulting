@@ -1,10 +1,9 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
 import './MapScreen.sass'
-
+import Search from '../components/Search';
 
 const MapScreen = () => {
-
     const googleApiKey: string = process.env.REACT_APP_API_KEY || ''
     
     const { isLoaded } = useJsApiLoader({
@@ -18,13 +17,16 @@ const MapScreen = () => {
         <div className='map'>
             {isLoaded &&
                 (
-                    <GoogleMap
-                        mapContainerStyle={{ width: '100%', height: '100%' }}
-                    center={position}
-                        zoom={15}
-                    >
-                    <Marker position={position} options={{label: {text: 'Posicion test', className: 'map-marker'}}}/>
-                    </GoogleMap>
+                    <Fragment>
+                        <Search />
+                        <GoogleMap
+                            mapContainerStyle={{ width: '100%', height: '100%' }}
+                            center={position}
+                            zoom={15}
+                            >
+                        <Marker position={position} options={{label: {text: 'Posicion test', className: 'map-marker'}}}/>
+                        </GoogleMap>
+                    </Fragment>
                 )
             }
         </div>
