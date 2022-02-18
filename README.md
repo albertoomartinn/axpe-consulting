@@ -36,6 +36,5 @@ Me han faltado algunas cosas que quería implementar como el InfoWindow o un pro
 
 Si en algún momento el proyecto no funciona es porque la API de Google ha dejado de funcionar o ya no existe para eso se tendrá que crear otra [API GOOGLE](https://developers.google.com/maps/documentation/javascript/get-api-key).
 Puntos a tener en cuenta al crear la API se necesita agregar un método de facturación, se tienen que habilitar los siguientes servicios para que funcione correctamente:
-___
 - Geocoding API
 - Maps JavaScript API
