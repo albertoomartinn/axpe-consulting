@@ -1,11 +1,11 @@
 import usePlacesAutocomplete, { getGeocode } from 'use-places-autocomplete';
 import { Combobox, ComboboxInput, ComboboxPopover, ComboboxList, ComboboxOption } from '@reach/combobox'
 // import '@reach/combobox/styles.css'
-import '../styles/combobox.sass'
+import '../assets/styles/combobox.sass'
 import { useDispatch } from 'react-redux';
 import { addMarkerList, saveCurrentSearch } from '../actions/markers';
 import { getLatAndLng } from '../helpers/getLatAndLng';
-import '../styles/search.sass'
+import '../assets/styles/search.sass'
 
 interface SearchProps { }
 
