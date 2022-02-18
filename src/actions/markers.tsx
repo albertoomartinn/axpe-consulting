@@ -1,6 +1,7 @@
+import { MarkerListProps } from '../components/Search'
 import { types } from '../types/types'
 
-export const addMarkerList = (event: any) => {
+export const addMarkerList = (event: MarkerListProps) => {
     return {
         type: types.addMarkerList,
         payload: event
