@@ -1,6 +1,7 @@
 import { Fragment } from 'react'
 import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
-import '../styles/mapScreen.sass'
+import '../assets/styles/mapScreen.sass'
+import logo from '../assets/img/logo.png'
 import Search from '../components/Search';
 import { useSelector } from 'react-redux';
 import PrintMarkers from '../components/PrintMarkers';
@@ -30,7 +31,11 @@ const MapScreen = () => {
                             zoom={15}
                         >
                             <PrintMarkers markersList={markersList} />
-                        </GoogleMap>
+                    </GoogleMap>
+                    <div className='footer'>
+                        <img src={logo} alt='logo'/>    
+                        <span> D&D Alberto Martín</span>
+                    </div>
                     </Fragment>
                 )
             }
