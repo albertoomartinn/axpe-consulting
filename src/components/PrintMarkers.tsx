@@ -1,5 +1,4 @@
 import { Marker } from '@react-google-maps/api';
-import { getLatLng } from 'use-places-autocomplete';
 import { MarkerListProps } from './Search';
 
 interface PrintMarkersProps {
