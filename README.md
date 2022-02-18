@@ -34,6 +34,8 @@ El proyecto se puede ejecutar haciendo un git clone del repositiorio de este pro
 
 Me han faltado algunas cosas que quería implementar como el InfoWindow o un propio helper que se encargaba de dar la Lat y Lng de los markers.
 
+Para comprobar que el proyecto funciona lo puedes hacer instalando el proyecto en local o desde [Proyecto API Google Maps](https://albertoomartinn.github.io/axpe-consulting/)
+
 Si en algún momento el proyecto no funciona es porque la API de Google ha dejado de funcionar o ya no existe para eso se tendrá que crear otra [API GOOGLE](https://developers.google.com/maps/documentation/javascript/get-api-key).
 Puntos a tener en cuenta al crear la API se necesita agregar un método de facturación, se tienen que habilitar los siguientes servicios para que funcione correctamente:
 - Geocoding API
