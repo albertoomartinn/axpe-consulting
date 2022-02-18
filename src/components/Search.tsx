@@ -1,6 +1,7 @@
 import usePlacesAutocomplete, { getGeocode } from 'use-places-autocomplete';
 import { Combobox, ComboboxInput, ComboboxPopover, ComboboxList, ComboboxOption } from '@reach/combobox'
-import '@reach/combobox/styles.css'
+// import '@reach/combobox/styles.css'
+import '../styles/combobox.sass'
 import { useDispatch } from 'react-redux';
 import { addMarkerList, saveCurrentSearch } from '../actions/markers';
 import { getLatAndLng } from '../helpers/getLatAndLng';
@@ -40,7 +41,7 @@ const Search: React.FC<SearchProps> = () => {
                     disabled={!ready}
                     placeholder="Introduce una dirección"
                 />
-                <ComboboxPopover>
+                <ComboboxPopover className='combobox-popover'>
                     <ComboboxList>
                         {status === 'OK' &&
                             data.map(({ description, place_id }: any) => (
