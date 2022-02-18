@@ -1,17 +1,22 @@
-import React, { Fragment } from 'react'
-import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
+import { Fragment } from 'react'
+import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
 import './MapScreen.sass'
 import Search from '../components/Search';
+import { useSelector } from 'react-redux';
+import PrintMarkers from '../components/PrintMarkers';
 
 const MapScreen = () => {
+
+    const { markersList, currentMarker } = useSelector((state: any) => state.markers)
+
     const googleApiKey: string = process.env.REACT_APP_API_KEY || ''
     
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
         googleMapsApiKey: googleApiKey
     })
-    
-    const position = { lat: 41.6312758, lng: 2.6741719 }
+
+    const currentMarkerPosition = Object.keys(currentMarker).length === 0 ? { lat: 41.6312758, lng: 2.6741719 } : currentMarker
 
     return (
         <div className='map'>
@@ -21,10 +26,10 @@ const MapScreen = () => {
                         <Search />
                         <GoogleMap
                             mapContainerStyle={{ width: '100%', height: '100%' }}
-                            center={position}
+                            center={currentMarkerPosition}
                             zoom={15}
-                            >
-                        <Marker position={position} options={{label: {text: 'Posicion test', className: 'map-marker'}}}/>
+                        >
+                            <PrintMarkers markersList={markersList} />
                         </GoogleMap>
                     </Fragment>
                 )
