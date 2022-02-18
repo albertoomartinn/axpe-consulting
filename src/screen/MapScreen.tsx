@@ -1,6 +1,6 @@
 import { Fragment } from 'react'
 import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
-import './MapScreen.sass'
+import '../styles/mapScreen.sass'
 import Search from '../components/Search';
 import { useSelector } from 'react-redux';
 import PrintMarkers from '../components/PrintMarkers';

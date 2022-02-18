@@ -4,6 +4,7 @@ import '@reach/combobox/styles.css'
 import { useDispatch } from 'react-redux';
 import { addMarkerList, saveCurrentSearch } from '../actions/markers';
 import { getLatAndLng } from '../helpers/getLatAndLng';
+import '../styles/search.sass'
 
 interface SearchProps { }
 
@@ -18,7 +19,7 @@ const Search: React.FC<SearchProps> = () => {
     const { ready, value, suggestions: { status, data }, setValue } = usePlacesAutocomplete();
 
     return (
-        <div>
+        <div className='search'>
             <Combobox
                 onSelect={async (address) => {
                     try {
@@ -35,7 +36,7 @@ const Search: React.FC<SearchProps> = () => {
                 <ComboboxInput
                     value={value}
                     onChange={(e) => setValue(e.target.value)}
-                    style={{ width: 300, maxWidth: "90%" }}
+                    style={{ width: 300, maxWidth: "100%" }}
                     disabled={!ready}
                     placeholder="Introduce una dirección"
                 />
